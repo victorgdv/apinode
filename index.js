@@ -1,7 +1,10 @@
 const express = require("express"); 
+const dotenv = require("dotenv");
+
 const {connect} = require("./src/api/utils/db")
 const presidentsRouter = require ("./src/api/routes/presidents.routes")
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
+dotenv.config();
 
 const app = express();
 connect ();

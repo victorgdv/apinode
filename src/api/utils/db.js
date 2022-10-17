@@ -1,6 +1,9 @@
 const mongoose = require ("mongoose");
+const dotenv = require ("dotenv");
+dotenv.config();
 
-const DB_URL = "mongodb+srv://root:root@cluster0.6wivmdo.mongodb.net/usapresidents?retryWrites=true&w=majority"; //Declaro una variable con mi BBDD, en este caso con mi mongo en local
+const DB_URL = process.env.DB_URL; //Declaro una variable con mi BBDD, en este caso con mi mongo en local
+
 const connect = async () => {
     try {
         //Conectar a la BBDD
